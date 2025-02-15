@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Cursive';
+    src: url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+  }
+}
+
+body {
+  @apply bg-gray-100;
+}
+
+.font-cursive {
+  font-family: 'Dancing Script', cursive;
+}
