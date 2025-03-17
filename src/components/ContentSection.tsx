@@ -17,12 +17,12 @@ const ContentSection = () => {
   ];
 
   return (
-    <div className="bg-gray-200 p-4 rounded-lg">
+    <div className="">
       <div className="space-y-4">
         {sections.map((section, index) => (
-          <div key={index} className="bg-white p-4 rounded">
-            <h2 className="text-xl font-semibold mb-2">{section.title}</h2>
-            <p className="text-gray-600 text-sm">{section.description}</p>
+          <div key={index} className="">
+            <h2 className="text-xl font-semibold mb-2 text-[#67645F]">{section.title}</h2>
+            <p className="text-[#67645F] text-sm">{section.description}</p>
           </div>
         ))}
       </div>

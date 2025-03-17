@@ -29,24 +29,20 @@ function App() {
                   </div>
 
                   {/* Right Square - GORDON */}
-                  <div className="bg-[#333] p-4 rounded-lg">
-                    <h2 className="text-white text-2xl font-bold mb-4 flex items-center justify-center">
-                      <Settings2 className="mr-2" />
+                  <div className="relative bg-[#E0E0DE] p-4 rounded-lg h-80">
+                  <ContentSection />
+                  <h2 className="absolute right-0 bottom-40  -translate-y-24 -rotate-90 origin-bottom-right justify-center text-[#67645F] text-6xl">
                       GORDON
                     </h2>
-                    <div className="grid grid-cols-1 gap-4">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <div key={i} className="bg-gray-600 p-2 rounded flex justify-center">
-                          <Settings2 className="text-white" size={24} />
-                        </div>
-                      ))}
-                    </div>
+                    
                   </div>
                 </div>
 
                 {/* Middle Section - Content */}
                 <div className="mb-4">
-                  <ContentSection />
+                  <div className="bg-gray-200 p-4 rounded-lg">
+                    
+                  </div>
                 </div>
 
                 {/* Bottom Section - Chat */}
