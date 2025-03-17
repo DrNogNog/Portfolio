@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import ContentSection from './components/ContentSection';
 import ChatInterface from './components/ChatInterface';
 import Work from './pages/Work';
+import ThreeJSComponent from './components/TheeJSComponent';
 
 function App() {
   return (
@@ -40,9 +41,21 @@ function App() {
 
                 {/* Middle Section - Content */}
                 <div className="mb-4">
-                  <div className="bg-gray-200 p-4 rounded-lg">
+                <div className="bg-gray-200 p-4 rounded-lg">
+                  <div className="flex justify-between">
+                    {/* Main content area */}
                     
+                      <ThreeJSComponent/>
+
+
+                    {/* Side box */}
+                    <div className="w-1/3 bg-white p-4 rounded-lg shadow-md">
+                      <h3 className="text-lg font-bold mb-2">Side Box</h3>
+                      <p className="text-gray-600 text-sm">This is the side box content.</p>
+                    </div>
                   </div>
+                </div>
+
                 </div>
 
                 {/* Bottom Section - Chat */}
