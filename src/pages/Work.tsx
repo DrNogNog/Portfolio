@@ -15,7 +15,7 @@ const projects: Project[] = [
     id: 1,
     name: 'Nutrisnap',
     description: 'A clean, minimalist personal portfolio showcasing my skills and experience.',
-    image: 'src/images/nutrisnap.png',
+    image: '../images/nutrisnap.png',
     url: 'https://github.com/DrNogNog/Nutri-Snap-The-Nutritional-Helper',
     type: 'project'
   },
