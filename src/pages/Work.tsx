@@ -23,7 +23,7 @@ const projects: Project[] = [
     id: 2,
     name: 'Distributed Systems',
     description: 'A fully functional e-commerce website with a user-friendly shopping experience.',
-    image: '/src/images/distributed.png',
+    image: './images/distributed.png',
     url: 'https://github.com/DrNogNog/Operating-Systems-Distributed-Systems',
     type: 'project'
   },
@@ -31,7 +31,7 @@ const projects: Project[] = [
     id: 3,
     name: 'Covid-19 News Analysis',
     description: 'Analyzed the news for sentiment and covid-19 similarities with granger causaulity statistics.',
-    image: '/src/images/covid.png',
+    image: './src/images/covid.png',
     url: 'https://github.com/DrNogNog/Granger-Causality/tree/main/Project%20Code',
     type: 'project'
   },
@@ -39,7 +39,7 @@ const projects: Project[] = [
     id: 4,
     name: 'Natural Language Processing & Gates',
     description: 'Natural Language Processing.',
-    image: '/src/images/nlp.png',
+    image: '../src/images/nlp.png',
     url: 'https://github.com/DrNogNog/Natural-Language-Processing-2021-22',
     type: 'project'
   },
@@ -47,7 +47,7 @@ const projects: Project[] = [
     id: 5,
     name: 'Android Application',
     description: 'Connecting food and people.',
-    image:'/src/images/android.png',
+    image:'C:/Users/Brava/Portfolio/src/images/android.png',
     url: 'https://github.com/DrNogNog/android501',
     type: 'project'
   },
