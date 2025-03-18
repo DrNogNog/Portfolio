@@ -1,66 +1,103 @@
 import React, { useEffect } from 'react';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
-const ThreeJSComponent = () => {
+const RobotThreeJS = () => {
   useEffect(() => {
     const container = document.querySelector('.threejs-container') as HTMLElement;
 
-    // Scene and Renderer
+    // Scene, Camera, Renderer
     const scene = new THREE.Scene();
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
 
-    // Camera (Perspective with controlled zoom)
     const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-    camera.position.z = 5;
+    camera.position.set(0, 5, 10);
 
-    // Controls to prevent over-zooming (limits applied)
-    const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableZoom = true;
-    controls.minDistance = 3; // Minimum zoom distance
-    controls.maxDistance = 7; // Maximum zoom distance
-    controls.enableDamping = true; // Smooth movement
-    controls.dampingFactor = 0.1;
-
-    // Geometry (Cube)
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
-
-    // Lighting
-    const light = new THREE.AmbientLight(0xffffff, 0.5);
+    // Lights
+    const light = new THREE.AmbientLight(0xffffff, 0.6);
     scene.add(light);
+
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(5, 5, 5).normalize();
+    directionalLight.position.set(5, 10, 7);
     scene.add(directionalLight);
 
-    // Animation Loop
+    // Robot Parts
+    const material = new THREE.MeshStandardMaterial({ color: 0x6699ff });
+
+    // Body
+    const body = new THREE.Mesh(new THREE.BoxGeometry(2, 3, 1), material);
+    body.position.y = 3;
+    scene.add(body);
+
+    // Head
+    const head = new THREE.Mesh(new THREE.BoxGeometry(1.5, 1.5, 1.5), material);
+    head.position.set(0, 5, 0);
+    scene.add(head);
+
+    // Eyes
+    const eyeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+    const eyeGeometry = new THREE.SphereGeometry(0.2);
+
+    const leftEye = new THREE.Mesh(eyeGeometry, eyeMaterial);
+    leftEye.position.set(-0.5, 5.5, 0.75);
+    scene.add(leftEye);
+
+    const rightEye = new THREE.Mesh(eyeGeometry, eyeMaterial);
+    rightEye.position.set(0.5, 5.5, 0.75);
+    scene.add(rightEye);
+
+    // Arms
+    const armMaterial = new THREE.MeshStandardMaterial({ color: 0xff6699 });
+    const armGeometry = new THREE.CylinderGeometry(0.3, 0.3, 3);
+
+    const leftArm = new THREE.Mesh(armGeometry, armMaterial);
+    leftArm.position.set(-2, 3, 0);
+    scene.add(leftArm);
+
+    const rightArm = new THREE.Mesh(armGeometry, armMaterial);
+    rightArm.position.set(2, 3, 0);
+    scene.add(rightArm);
+
+    // Legs
+    const legMaterial = new THREE.MeshStandardMaterial({ color: 0x66ff99 });
+    const legGeometry = new THREE.CylinderGeometry(0.4, 0.4, 3);
+
+    const leftLeg = new THREE.Mesh(legGeometry, legMaterial);
+    leftLeg.position.set(-0.7, 0.5, 0);
+    scene.add(leftLeg);
+
+    const rightLeg = new THREE.Mesh(legGeometry, legMaterial);
+    rightLeg.position.set(0.7, 0.5, 0);
+    scene.add(rightLeg);
+
+    // Animation
+    let angle = 0;
     const animate = () => {
       requestAnimationFrame(animate);
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
-      controls.update(); // Ensure smooth controls
+
+      angle += 0.02;
+      leftArm.rotation.x = Math.sin(angle) * 0.5;
+      rightArm.rotation.x = Math.sin(angle + Math.PI) * 0.5;
+      head.rotation.y = Math.sin(angle * 0.5) * 0.2;
+
       renderer.render(scene, camera);
     };
+
     animate();
 
-    // Resize Handling
+    // Handle Resize
     const handleResize = () => {
-      const { clientWidth, clientHeight } = container;
-      camera.aspect = clientWidth / clientHeight;
+      camera.aspect = container.clientWidth / container.clientHeight;
       camera.updateProjectionMatrix();
-      renderer.setSize(clientWidth, clientHeight);
+      renderer.setSize(container.clientWidth, container.clientHeight);
     };
+
     window.addEventListener('resize', handleResize);
 
-    // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
       container.removeChild(renderer.domElement);
-      controls.dispose();
       renderer.dispose();
     };
   }, []);
@@ -72,4 +109,4 @@ const ThreeJSComponent = () => {
   );
 };
 
-export default ThreeJSComponent;
+export default RobotThreeJS;

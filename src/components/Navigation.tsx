@@ -8,6 +8,9 @@ const Navigation = () => {
     <nav className="bg-white py-4 mb-4">
       <div className="container mx-auto px-4">
         <ul className="flex justify-end space-x-4 text-lg font-medium">
+        <li>
+            <Link to="/" className="cursor-pointer hover:text-gray-600">Home</Link>
+          </li>
           <li>
             <Link to="/blogs" className="cursor-pointer hover:text-gray-600">Blogs</Link>
           </li>
