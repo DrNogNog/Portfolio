@@ -6,7 +6,8 @@ import ChatInterface from './components/ChatInterface';
 import Work from './pages/Work';
 import RobotThreeJS from './components/TheeJSComponent';
 import Blogs from './pages/Blogs';
-import BlogPage from './pages/BlogOne'
+import BlogPage from './pages/BlogOne';
+import Profile from './pages/Profile';
 function App() {
   return (
     <Router>
@@ -18,9 +19,8 @@ function App() {
           {/* Work Page */}
           <Route path="/work" element={<Work />} />
           
-          <Route path="/blogs/one" element={<BlogPage/>}/>
-          <Route path="/blogs/two" element={<BlogPage/>}/>
-          <Route path="/blogs/three" element={<BlogPage/>}/>
+          <Route path="/blogs/:id" element={<BlogPage />} />
+          <Route path="/profile" element={<Profile/>}/>
           {/* Home Page */}
           <Route
             path="/"

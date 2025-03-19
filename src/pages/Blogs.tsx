@@ -1,37 +1,49 @@
 import { ArrowRight, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-interface Blog {
+export interface Blog {
     id: string;
     hero: string; // This is now the title
     blogfeed: string; // This is now the description
     image: string; // New image field for the image source
     author: string;
+    authorname: string;
     categories: string;
     quicklinks: string;
+    content: string;
+    date: string;
+    readtime: string;
     type: 'infographic' | 'daily' | 'opinion';
 };
 
-const blogs: Blog[] = [
+export const blogs: Blog[] = [
     {
         id: 'one',
         hero: 'Vlog Number One',
         blogfeed: 'My First Blog',
         image: '/images/first.png', // Replace with your image URL
         author: 'Gordon',
+        authorname: '',
         categories: '',
         quicklinks: '',
         type: 'daily',
+        content: '',
+        date: '',
+        readtime: '',
     },
     {
         id: 'two',
         hero: 'Life Advice Quotes',
         blogfeed: 'Writings of Life advice from other people throughout time.',
         image: '/images/lifelessons.png', // Replace with your image URL
-        author: 'Gordon',
+        author: '/images/lifelessons.png',
+        authorname: 'Gordon',
         categories: '',
         quicklinks: '',
         type: 'infographic',
+        content: 'If you weren\'t ready you wouldn\'t have the opportunity. ',
+        date: 'March 19, 2025',
+        readtime: '5 min read',
     },
     {
         id:'three',
@@ -39,14 +51,17 @@ const blogs: Blog[] = [
         blogfeed: 'I start yapping about life in New York City and how it has been to me.',
         image: '/images/yap.png', // Replace with your image URL
         author: 'Gordon',
+        authorname: '',
         categories: '',
         quicklinks: '',
         type: 'opinion',
+        content: '',
+        date: '',
+        readtime: '',
     },
 ];
 
 const Blogs = () => {
-    console.log(blogs)
     return (
         <div className="min-h-screen bg-[#e5b3e5] p-4">
             <div className="container mx-auto">
@@ -64,7 +79,9 @@ const Blogs = () => {
                             {/* Content */}
                             <div className="p-4">
                                 <h3 className="text-lg font-semibold mb-2">{blog.hero}</h3>
-                                <p className="text-sm text-gray-600">{blog.blogfeed}</p>
+                                <p className="text-sm text-gray-600" style={{ whiteSpace: 'pre-wrap' }}>
+                                    {blog.content}
+                                </p>
                             </div>
 
                             {/* Hover Icons */}
