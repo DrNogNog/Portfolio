@@ -15,7 +15,7 @@ const projects: Project[] = [
     id: 1,
     name: 'Nutrisnap',
     description: 'A clean, minimalist personal portfolio showcasing my skills and experience.',
-    image: '../images/nutrisnap.png',
+    image: '/images/nutrisnap.png',
     url: 'https://github.com/DrNogNog/Nutri-Snap-The-Nutritional-Helper',
     type: 'project'
   },
@@ -23,7 +23,7 @@ const projects: Project[] = [
     id: 2,
     name: 'Distributed Systems',
     description: 'A fully functional e-commerce website with a user-friendly shopping experience.',
-    image: './images/distributed.png',
+    image: '/images/distributed.png',
     url: 'https://github.com/DrNogNog/Operating-Systems-Distributed-Systems',
     type: 'project'
   },
@@ -31,7 +31,7 @@ const projects: Project[] = [
     id: 3,
     name: 'Covid-19 News Analysis',
     description: 'Analyzed the news for sentiment and covid-19 similarities with granger causaulity statistics.',
-    image: './src/images/covid.png',
+    image: '/images/covid.png',
     url: 'https://github.com/DrNogNog/Granger-Causality/tree/main/Project%20Code',
     type: 'project'
   },
@@ -39,7 +39,7 @@ const projects: Project[] = [
     id: 4,
     name: 'Natural Language Processing & Gates',
     description: 'Natural Language Processing.',
-    image: '../src/images/nlp.png',
+    image: '/images/nlp.png',
     url: 'https://github.com/DrNogNog/Natural-Language-Processing-2021-22',
     type: 'project'
   },
@@ -47,7 +47,7 @@ const projects: Project[] = [
     id: 5,
     name: 'Android Application',
     description: 'Connecting food and people.',
-    image:'C:/Users/Brava/Portfolio/src/images/android.png',
+    image:'/images/android.png',
     url: 'https://github.com/DrNogNog/android501',
     type: 'project'
   },
@@ -55,7 +55,7 @@ const projects: Project[] = [
     id: 6,
     name: 'Belfe',
     description: 'Virtual Reality Cosemetic Mirror',
-    image: 'src/images/cosemetic.png',
+    image: '/images/cosemetic.png',
     url: 'https://github.com/DrNogNog/Belfe',
     type: 'project'
   },
@@ -63,7 +63,7 @@ const projects: Project[] = [
     id: 7,
     name: 'EZML',
     description: 'Machine Learning Software',
-    image: 'src/images/yolov8.png',
+    image: '/images/yolov8.png',
     url: 'https://ezml.io/',
     type: 'project'
   },
@@ -71,7 +71,7 @@ const projects: Project[] = [
     id: 8,
     name: 'Salting and Hashing',
     description: 'Projects to show how salts and encryptions work.',
-    image: 'src/images/salts.png',
+    image: '/images/salts.png',
     url: 'https://github.com/DrNogNog/Security-Code',
     type: 'project'
   },
@@ -79,7 +79,7 @@ const projects: Project[] = [
     id: 9,
     name: 'Bitcoin Mimic',
     description: 'We make a bitcoin but instead of using sha256, we use a matrix to calculate hashes.',
-    image: 'src/images/bitcoin.png',
+    image: '/images/bitcoin.png',
     url: 'https://github.com/DrNogNog/matrixcoin',
     type: 'project'
   },
@@ -87,7 +87,7 @@ const projects: Project[] = [
     id: 10,
     name: 'Combinatorics',
     description: 'Combinatorics Assignments',
-    image: 'src/images/combinatorics.png',
+    image: '/images/combinatorics.png',
     url: 'https://github.com/DrNogNog/Probability-and-Combinatoric-Structures',
     type: 'project'
   },
@@ -95,7 +95,7 @@ const projects: Project[] = [
     id: 11,
     name: 'OCaml Interpreter',
     description: 'We use ocaml to build string interpreters, for the terminal',
-    image: 'src/images/parser.png',
+    image: '/images/parser.png',
     url: 'https://github.com/DrNogNog/OCaml-2021-22',
     type: 'project'
   },
@@ -103,7 +103,7 @@ const projects: Project[] = [
     id: 12,
     name: 'Voting Patterns',
     description: 'We built analysis for baystate banner to see places that will need more focus for the democratic vote.',
-    image: 'src/images/votingpattern.png',
+    image: '/images/votingpattern.png',
     url: 'https://github.com/DrNogNog/Voting-Patterns-Analysis',
     type: 'project'
   },  
