@@ -6,17 +6,21 @@ import ChatInterface from './components/ChatInterface';
 import Work from './pages/Work';
 import RobotThreeJS from './components/TheeJSComponent';
 import Blogs from './pages/Blogs';
-
+import BlogPage from './pages/BlogOne'
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gray-100">
         <Navigation />
         <Routes>
+          {/* Blog Page */}
+          <Route path="/blogs" element={<Blogs/>} />
           {/* Work Page */}
           <Route path="/work" element={<Work />} />
-          {/* Blog Page */}
-          <Route path="/blog" element={<Blogs/>} />
+          
+          <Route path="/blogs/one" element={<BlogPage/>}/>
+          <Route path="/blogs/two" element={<BlogPage/>}/>
+          <Route path="/blogs/three" element={<BlogPage/>}/>
           {/* Home Page */}
           <Route
             path="/"
