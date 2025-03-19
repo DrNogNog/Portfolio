@@ -5,6 +5,7 @@ import ContentSection from './components/ContentSection';
 import ChatInterface from './components/ChatInterface';
 import Work from './pages/Work';
 import RobotThreeJS from './components/TheeJSComponent';
+import Blogs from './pages/Blogs';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         <Routes>
           {/* Work Page */}
           <Route path="/work" element={<Work />} />
-
+          {/* Blog Page */}
+          <Route path="/blog" element={<Blogs/>} />
           {/* Home Page */}
           <Route
             path="/"
