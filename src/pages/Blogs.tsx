@@ -36,12 +36,25 @@ export const blogs: Blog[] = [
         hero: 'Life Advice Quotes',
         blogfeed: 'Writings of Life advice from other people throughout time.',
         image: '/images/lifelessons.png', // Replace with your image URL
-        author: '/images/lifelessons.png',
+        author: 'Gordon',
         authorname: 'Gordon',
         categories: '',
         quicklinks: '',
         type: 'infographic',
-        content: 'If you weren\'t ready you wouldn\'t have the opportunity. ',
+        content: `Here are random life lessons I've gotten from strangers. If you weren't ready you wouldn't have the opportunity. 
+Be aware when using words such as "yeah" or "no problem" no problem implies that there was a problem. 
+Instead imply there was a worry. "No worries." Repeated yeahs mean that you don't care as much, 
+instead use "I understand" in unison with "keep going". As a third wheel, nothing beats love. 
+So let them be, chill out. A product not only needs SWOT and PEST analysis but the market has to respond well to it. 
+Film making is an art, please try recording as much versions of yourself as possible. 
+Some things are actually interesting, such as a two outlandish haircuts.
+
+Don't train because it'll make me hate myself. Maya for nodes API. Hardware locks you in. 
+Once you're successful you're a genius. Always have common sense.
+
+Everyone has a reason why it is why it is, there's nothing to think about, it's logical. 
+There's no learning in there's no product in insurance; be responsible. 
+Don't work in insurance if you want to learn.`,
         date: 'March 19, 2025',
         readtime: '5 min read',
     },
