@@ -8,6 +8,7 @@ import RobotThreeJS from './components/TheeJSComponent';
 import Blogs from './pages/Blogs';
 import BlogPage from './pages/BlogOne';
 import Profile from './pages/Profile';
+import Photography from './pages/Photography';
 function App() {
   return (
     <Router>
@@ -18,6 +19,7 @@ function App() {
           <Route path="/blogs" element={<Blogs/>} />
           {/* Work Page */}
           <Route path="/work" element={<Work />} />
+          <Route path="/photography" element={<Photography/>}/>
           
           <Route path="/blogs/:id" element={<BlogPage />} />
           <Route path="/profile" element={<Profile/>}/>

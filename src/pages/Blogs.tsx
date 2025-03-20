@@ -36,7 +36,7 @@ export const blogs: Blog[] = [
         hero: 'Life Advice Quotes',
         blogfeed: 'Writings of Life advice from other people throughout time.',
         image: '/images/lifelessons.png', // Replace with your image URL
-        author: 'Gordon',
+        author: '/images/profilepic.png',
         authorname: 'Gordon',
         categories: '',
         quicklinks: '',

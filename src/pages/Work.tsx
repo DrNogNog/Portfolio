@@ -112,7 +112,7 @@ const projects: Project[] = [
     name: 'Photography',
     description: 'Professional photography portfolio',
     image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
-    url: 'https://example.com/photography',
+    url: '/photography',
     type: 'photography'
   },
   {

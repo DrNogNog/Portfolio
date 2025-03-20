@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  startedx{
+    background: #070514;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  
+  }
+  .containerx{
+    height: 550px;
+    width: 1100px;
+    background: rgba(255,255,255,.2);
+    border: 2px solid rgba(255,255,255,.2);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+  }
+  .containerx .row{
+    gap: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hellox{
+    width: 300px;
+    height: 200px;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #070514;
+    border: 10px solid rgba(255,255,255,.2);
+    scale:.95;
+    cursor: pointer;
+    transition: .5s;
+    object-fit: cover;
+  }
+  .hellox:hover{
+    scale: 1;
+  }
+  
+  #PopDiv{
+    background: rgba(0,0,0,.6);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(2px);
+    
+    display: none;
+  }
+  
+  #PopDiv.active{
+    display:grid;
+    justify-content:center;
+    align-items:center;
+  }
+  
+  #PopDiv.active img{
+    height: 400px;
+    width: 500px;
+    box-shadow: 0 0 10px #070514;
+    border-radius: 10px;
+    border: 10px solid rgba(255,255,255,.2);
+  }
+  
+  #PopDiv.active img:hover{
+    scale: none;
+  }
