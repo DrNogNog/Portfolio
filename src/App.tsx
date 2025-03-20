@@ -9,6 +9,8 @@ import Blogs from './pages/Blogs';
 import BlogPage from './pages/BlogOne';
 import Profile from './pages/Profile';
 import Photography from './pages/Photography';
+// import GoogleMaps from './components/GoogleMaps';
+
 function App() {
   return (
     <Router>
@@ -31,16 +33,12 @@ function App() {
                 {/* Top Section - Two squares */}
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   {/* Left Square - Keep Calm */}
-                  <div className="bg-[#00ffa2] p-4 rounded-lg flex items-center justify-center">
-                    <h1 className="text-3xl font-cursive text-white text-center leading-snug">
-                      Keep Calm
-                      <br />
-                      and Keep Up
-                    </h1>
+                  <div className="bg-[#00ffa2] p-4 rounded-lg flex items-center justify-center h-80 overflow-hidden">
+                    <img src="/images/keepcalm.png" className="w-full h-full object-cover" />
                   </div>
 
                   {/* Right Square - GORDON */}
-                  <div className="relative bg-[#E0E0DE] p-4 rounded-lg h-80">
+                  <div className="relative bg-[#E0E0DE] p-4 rounded-lg h-80 overflow-hidden">
                     <ContentSection />
                     <h2 className="absolute right-0 bottom-40 -translate-y-24 -rotate-90 origin-bottom-right text-[#67645F] text-6xl">
                       GORDON
@@ -74,6 +72,7 @@ function App() {
 
                 {/* Bottom Section - Chat */}
                 <ChatInterface />
+                {/* <GoogleMaps /> */}
               </div>
             }
           />

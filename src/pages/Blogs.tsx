@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { ArrowRight, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -16,14 +17,19 @@ export interface Blog {
     type: 'infographic' | 'daily' | 'opinion';
 };
 
+// Function to process content and replace \n with actual newlines
+const processContent = (content: string) => {
+    return content.replace(/\\n/g, '\n');
+}
+
 export const blogs: Blog[] = [
     {
         id: 'one',
         hero: 'Vlog Number One',
         blogfeed: 'My First Blog',
         image: '/images/first.png', // Replace with your image URL
-        author: 'Gordon',
-        authorname: '',
+        author: '/images/profilepic.png',
+        authorname: 'Gordon',
         categories: '',
         quicklinks: '',
         type: 'daily',
@@ -41,20 +47,18 @@ export const blogs: Blog[] = [
         categories: '',
         quicklinks: '',
         type: 'infographic',
-        content: `Here are random life lessons I've gotten from strangers. If you weren't ready you wouldn't have the opportunity. 
-Be aware when using words such as "yeah" or "no problem" no problem implies that there was a problem. 
-Instead imply there was a worry. "No worries." Repeated yeahs mean that you don't care as much, 
-instead use "I understand" in unison with "keep going". As a third wheel, nothing beats love. 
-So let them be, chill out. A product not only needs SWOT and PEST analysis but the market has to respond well to it. 
-Film making is an art, please try recording as much versions of yourself as possible. 
-Some things are actually interesting, such as a two outlandish haircuts.
-
-Don't train because it'll make me hate myself. Maya for nodes API. Hardware locks you in. 
-Once you're successful you're a genius. Always have common sense.
-
-Everyone has a reason why it is why it is, there's nothing to think about, it's logical. 
-There's no learning in there's no product in insurance; be responsible. 
-Don't work in insurance if you want to learn.`,
+        content: `Over time, I've gathered random life lessons from strangers that have stuck with me. \n
+        If you weren't ready, the opportunity wouldn't present itself. \n
+        Be mindful of the language you use—saying "no problem" suggests there was an issue, while "no worries" implies there was a concern without emphasizing a problem. \n
+        When responding with "yeah" repeatedly, it can signal disinterest; instead, use phrases like "I understand" combined with "keep going" to show engagement. \n
+        In product development, it's not enough to conduct SWOT and PEST analyses—the market's response ultimately determines success. \n
+        Filmmaking is an art, so try recording as many versions of yourself as possible. Some things, like two outlandish haircuts, are genuinely interesting. \n
+        Consistency is good but don't train if it will lead to self-hatred. \n 
+        In tech, be aware that hardware can lock you into specific systems, and in the world’s eyes, once you're successful, you're seen as a genius. \n
+        Always apply common sense, and remember that everything has a reason—it is what it is because it's logical. \n
+        Insurance is not a field for learning or innovation, and if you value growth, it may not be the best industry to work in. \n
+        Lastly, Maya is useful for working with nodes through its API.
+        `,
         date: 'March 19, 2025',
         readtime: '5 min read',
     },
@@ -63,8 +67,8 @@ Don't work in insurance if you want to learn.`,
         hero: 'My thoughts on New York City',
         blogfeed: 'I start yapping about life in New York City and how it has been to me.',
         image: '/images/yap.png', // Replace with your image URL
-        author: 'Gordon',
-        authorname: '',
+        author: '/images/profilepic.png',
+        authorname: 'Gordon',
         categories: '',
         quicklinks: '',
         type: 'opinion',
@@ -75,6 +79,21 @@ Don't work in insurance if you want to learn.`,
 ];
 
 const Blogs = () => {
+    useEffect(() => {
+        // Create a script element
+        const script = document.createElement('script');
+        script.src = './scripttwo.js'; // Replace with the actual path to your script
+        script.async = true;
+
+        // Append the script to the document body
+        document.body.appendChild(script);
+
+        // Cleanup function to remove the script when the component unmounts
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, []);
+
     return (
         <div className="min-h-screen bg-[#e5b3e5] p-4">
             <div className="container mx-auto">
@@ -93,7 +112,7 @@ const Blogs = () => {
                             <div className="p-4">
                                 <h3 className="text-lg font-semibold mb-2">{blog.hero}</h3>
                                 <p className="text-sm text-gray-600" style={{ whiteSpace: 'pre-wrap' }}>
-                                    {blog.content}
+                                    {processContent(blog.blogfeed)} {/* Processed content */}
                                 </p>
                             </div>
 

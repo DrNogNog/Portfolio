@@ -12,6 +12,9 @@ const Navigation = () => {
             <Link to="/" className="cursor-pointer hover:text-gray-600">Home</Link>
           </li>
           <li>
+            <Link to="/algorithms" className="cursor-pointer hover:text-gray-600">Algorithms</Link>
+          </li>
+          <li>
             <Link to="/blogs" className="cursor-pointer hover:text-gray-600">Blogs</Link>
           </li>
           <li>

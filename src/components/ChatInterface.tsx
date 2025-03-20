@@ -15,6 +15,7 @@ const ChatInterface = () => {
   return (
     <div className="bg-gray-200 rounded-lg p-4">
       <h3 className="text-sm font-semibold mb-4">Virtual Ted</h3>
+      {/**Content starts here */}
       <div className="space-y-4 mb-4">
         <div className="bg-[#ffb4b4] w-2/3 p-3 rounded-lg">
           Message content here...

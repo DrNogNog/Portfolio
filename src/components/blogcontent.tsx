@@ -34,7 +34,12 @@ function blogcontent({ blogs }: { blogs: Blog }) {
           {/* Blog Content */}
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-700 leading-relaxed">
-              {blogs.content}
+              {blogs.content.split('\n').map((line, index) => (
+                <React.Fragment key={index}>
+                  {line}
+                  {index < blogs.content.split('\n').length - 1 && <br />}
+                </React.Fragment>
+              ))}
             </p>
           </div>
         </div>
