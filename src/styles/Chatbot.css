@@ -1,0 +1,108 @@
+.top-part {
+    height: 100px;
+    background: #0f0f20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.top-part .agent-details {
+    display: flex;
+    align-items: center;
+}
+
+.container .top-part .agent-details img {
+    height: 70px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.top-part .agent-text {
+    margin-left: 10px;
+}
+
+.agent-text h3 {
+    font-size: 15px;
+}
+
+.agent-text p {
+    font-size: 11px;
+}
+
+.agent-text span {
+    color: #0f0;
+}
+
+.left-part {
+    max-width: 260px;
+    display: flex;
+    align-items: center;
+    margin-right: 65%
+}
+
+.left-part img {
+    height: 50px;
+    background: #0f0f20;
+    border-radius: 50%;
+}
+
+.left-part p {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 15px;
+    background: #ffb4b4;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.agent-chart {
+    display: flex;
+    align-items: center;
+}
+
+.right-part {
+    max-width: 260px;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-end; /* Align the items to the right */
+}
+
+.right-part p {
+    color: #fff;
+    background: #0f0f20;
+    padding: 8px 24px;
+    margin-bottom: 11px;
+    border-radius: 10px;
+    text-align: right; /* Align text inside the p to the right */
+    width: 100%; /* Ensure p takes full width */
+}
+
+.right-part span {
+    color: #555;
+    font-size: 11px;
+    font-weight: 500;
+    text-align: right; /* Align text inside span to the right */
+    width: 100%; /* Ensure span takes full width */
+}
+
+/* Additional styling for message box */
+.message-text {
+    color: #ffffff;
+    font-size: 15px;
+    background: #ffb4b4;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.response-text {
+    color: #ffffff;
+    font-size: 15px;
+    background: #0f0f20;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 
+}
