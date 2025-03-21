@@ -10,6 +10,7 @@ import BlogPage from './pages/BlogOne';
 import Profile from './pages/Profile';
 import Photography from './pages/Photography';
 // import GoogleMaps from './components/GoogleMaps';
+import Algorithms from './pages/Algorithms';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           
           <Route path="/blogs/:id" element={<BlogPage />} />
           <Route path="/profile" element={<Profile/>}/>
+          <Route path="/algorithms" element={<Algorithms/>}/>
           {/* Home Page */}
           <Route
             path="/"
