@@ -9,3 +9,4 @@ Future Implementations (To-do):
 -llm chatgpt chatbot
 -reinsert of photography page
 -algorithm visualizer with A* search.
+Algorithms Page is learned from Clementine on Youtube
