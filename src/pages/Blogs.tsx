@@ -33,7 +33,10 @@ export const blogs: Blog[] = [
         categories: '',
         quicklinks: '',
         type: 'daily',
-        content: '',
+        content: `Walking into a large paradise the mall surrounded with palm wood trees seemed perched open from the second floor glass-barriered hand holders. \n
+                The event was filled with many new faces, most deeply involved in design and content creation. The air buzzed with conversations about color palettes, \n 
+                branding strategies, and the latest in digital aesthetics. Some sat in small groups, sketching ideas on tablets, while others adjusted camera angles, \n
+                 perfecting their shots for the next viral reel. `,
         date: '',
         readtime: '',
     },
