@@ -76,9 +76,13 @@
     padding: 8px 24px;
     margin-bottom: 11px;
     border-radius: 10px;
+
     text-align: right; /* Align text inside the p to the right */
-    width: 100%; /* Ensure p takes full width */
+    width: fit-content; /* Prevent it from stretching full width */
+    max-width: 80%; /* Adjust as needed */
+    margin-left: auto; /* Pushes the element to the right */
 }
+
 
 .right-part span {
     color: #555;

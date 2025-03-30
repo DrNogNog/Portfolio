@@ -52,7 +52,7 @@ function App() {
                 <div className="mb-4">
                   <div className="bg-gray-200 p-4 rounded-lg flex gap-4">
                     {/* Main Content Area */}
-                    <div className="flex-grow">
+                    <div className="flex-grow flex items-center justify-center">
                       <RobotThreeJS />
                     </div>
 

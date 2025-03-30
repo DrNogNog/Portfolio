@@ -30,16 +30,21 @@ const ChatInterface = () => {
       {/**Content starts here */}
       <div className="space-y-4 my-8 mb-4">
   <div className="flex items-start"> {/* Use flexbox to align left and right parts horizontally */}
-    <div className="left-part flex items-center mr-4">
-      <div className="agent-chart flex items-center">
-        <img src="/images/profilepic.png" alt="Profile" className="w-12 h-12 rounded-full border-2 border-white"/>
-        <p className="message-text">Message content here...</p>
-      </div>
-    </div>
-    <div className="right-part text-right flex-1">
-      <p className="response-text">Response here...</p>
-      <span className="text-gray-500 text-xs">20 minutes ago</span>
-    </div>
+  <div className="left-part flex items-center mr-4">
+  <div className="agent-chart flex items-center">
+    <img src="/images/profilepic.png" alt="Profile" className="w-12 h-12 rounded-full border-2 border-white"/>
+    <p className="message-text">Message content here...</p>
+  </div>
+</div>
+
+<div className="right-part flex-1 flex flex-col items-end">
+  <p className="response-text bg-[#0f0f20] text-white px-6 py-2 rounded-lg">
+    Response here...
+  </p>
+  <span className="text-gray-500 text-xs">20 minutes ago</span>
+</div>
+
+
   </div>
 </div>
 

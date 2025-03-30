@@ -33,12 +33,12 @@ export const blogs: Blog[] = [
         categories: '',
         quicklinks: '',
         type: 'daily',
-        content: `Walking into a large paradise the mall surrounded with palm wood trees seemed perched open from the second floor glass-barriered hand holders. \n
-                The event was filled with many new faces, most deeply involved in design and content creation. The air buzzed with conversations about color palettes, \n 
-                branding strategies, and the latest in digital aesthetics. Some sat in small groups, sketching ideas on tablets, while others adjusted camera angles, \n
-                 perfecting their shots for the next viral reel. `,
-        date: '',
-        readtime: '',
+        content: `****Walking into a large paradise the mall surrounded with palm wood trees seemed perched open from the second floor glass-barriered hand holders. The event thrummed with creative energy as a diverse mix of designers, content creators, and visual storytellers filled the space. Bright screens cast a soft glow on eager faces, their eyes locked onto digital canvases where bold color palettes and intricate branding elements took shape. Animated discussions about typography trends and UI/UX innovations rippled through the crowd, blending with the rhythmic clicks of cameras and the occasional scribble of styluses against glass.
+                ****In one corner, a group huddled over a sleek tablet, refining a striking logo concept, their fingers tracing delicate curves and sharp edges with meticulous precision. Nearby, a photographer meticulously adjusted the lighting on a minimalist product setup, ensuring every shadow and highlight played in perfect harmony. Across the room, a cluster of influencers rehearsed transitions for their latest reel, their movements fluid and practiced, chasing that flawless moment destined to capture millions of views. Everywhere, the atmosphere pulsed with a shared passion for design and storytelling—an electric fusion of artistry and technology in motion. \n 
+                ****Exchanging visions the groups mingled. 
+                `,
+        date: 'March 30, 2025',
+        readtime: '5 min read',
     },
     {
         id: 'two',

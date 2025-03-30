@@ -1,5 +1,5 @@
 import { MessageCircle, MoreHorizontal, Home, Bell, Search, ThumbsUp, Heart, Laugh, Angry, Salad as Sad } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 interface User {
   name: string;
   avatar: string;
@@ -54,7 +54,7 @@ function Profile() {
               
             </div>
             <div className="flex items-center space-x-4">
-              <Home className="w-6 h-6" />
+              <Link to="/" > <Home className="w-6 h-6" /> </Link>
               <Bell className="w-6 h-6" />
               <MessageCircle className="w-6 h-6" />
               <MoreHorizontal className="w-6 h-6" />
@@ -84,7 +84,7 @@ function Profile() {
                   {[1, 2, 3].map((i) => (
                     <div key={i} className="aspect-square rounded-lg overflow-hidden">
                       <img
-                        src={`https://images.unsplash.com/photo-${500 + i}?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80`}
+                        src={`/images/exterior.jpeg`}
                         alt={`Photo ${i}`}
                         className="w-full h-full object-cover"
                       />
