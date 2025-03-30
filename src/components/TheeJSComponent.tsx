@@ -1,9 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-const RobotThreeJS = () => {
+const RobotThreeJS = ({ rotation, scale }: { rotation: number; scale: number }) => {
+  const containerRef = useRef<HTMLDivElement | null>(null); // Define ref type
+
   useEffect(() => {
-    const container = document.querySelector('.threejs-container') as HTMLElement;
+    const container = containerRef.current;
+    if (!container) return; // If container is not available, exit early
 
     // Scene, Camera, Renderer
     const scene = new THREE.Scene();
@@ -22,35 +25,20 @@ const RobotThreeJS = () => {
     directionalLight.position.set(5, 10, 7);
     scene.add(directionalLight);
 
-    // Robot Parts
+    // Materials
     const material = new THREE.MeshStandardMaterial({ color: 0x6699ff });
 
-    // Body
+    // Robot Parts
     const body = new THREE.Mesh(new THREE.BoxGeometry(2, 3, 1), material);
     body.position.y = 3;
     scene.add(body);
 
-    // Head
     const head = new THREE.Mesh(new THREE.BoxGeometry(1.5, 1.5, 1.5), material);
     head.position.set(0, 5, 0);
     scene.add(head);
 
-    // Eyes
-    const eyeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
-    const eyeGeometry = new THREE.SphereGeometry(0.2);
-
-    const leftEye = new THREE.Mesh(eyeGeometry, eyeMaterial);
-    leftEye.position.set(-0.5, 5.5, 0.75);
-    scene.add(leftEye);
-
-    const rightEye = new THREE.Mesh(eyeGeometry, eyeMaterial);
-    rightEye.position.set(0.5, 5.5, 0.75);
-    scene.add(rightEye);
-
-    // Arms
     const armMaterial = new THREE.MeshStandardMaterial({ color: 0xff6699 });
     const armGeometry = new THREE.CylinderGeometry(0.3, 0.3, 3);
-
     const leftArm = new THREE.Mesh(armGeometry, armMaterial);
     leftArm.position.set(-2, 3, 0);
     scene.add(leftArm);
@@ -59,54 +47,30 @@ const RobotThreeJS = () => {
     rightArm.position.set(2, 3, 0);
     scene.add(rightArm);
 
-    // Legs
-    const legMaterial = new THREE.MeshStandardMaterial({ color: 0x66ff99 });
-    const legGeometry = new THREE.CylinderGeometry(0.4, 0.4, 3);
-
-    const leftLeg = new THREE.Mesh(legGeometry, legMaterial);
-    leftLeg.position.set(-0.7, 0.5, 0);
-    scene.add(leftLeg);
-
-    const rightLeg = new THREE.Mesh(legGeometry, legMaterial);
-    rightLeg.position.set(0.7, 0.5, 0);
-    scene.add(rightLeg);
-
     // Animation
-    let angle = 0;
     const animate = () => {
       requestAnimationFrame(animate);
 
-      angle += 0.02;
-      leftArm.rotation.x = Math.sin(angle) * 0.5;
-      rightArm.rotation.x = Math.sin(angle + Math.PI) * 0.5;
-      head.rotation.y = Math.sin(angle * 0.5) * 0.2;
+      // Apply dynamic transformations from props
+      body.scale.set(scale, scale, scale);
+      leftArm.rotation.x = rotation;
+      rightArm.rotation.x = -rotation;
 
       renderer.render(scene, camera);
     };
 
     animate();
 
-    // Handle Resize
-    const handleResize = () => {
-      camera.aspect = container.clientWidth / container.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(container.clientWidth, container.clientHeight);
-    };
-
-    window.addEventListener('resize', handleResize);
-
+    // Cleanup on unmount
     return () => {
-      window.removeEventListener('resize', handleResize);
-      container.removeChild(renderer.domElement);
-      renderer.dispose();
+      if (container && renderer.domElement) {
+        container.removeChild(renderer.domElement);
+        renderer.dispose();
+      }
     };
-  }, []);
+  }, [rotation, scale]);
 
-  return (
-    <div className="h-64 w-64">
-      <div className="bg-white rounded-lg shadow-md h-full w-full threejs-container" />
-    </div>
-  );
+  return <div ref={containerRef} className="h-64 w-64 bg-white rounded-lg shadow-md" />;
 };
 
 export default RobotThreeJS;

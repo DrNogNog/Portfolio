@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import ContentSection from './components/ContentSection';
@@ -9,24 +9,27 @@ import Blogs from './pages/Blogs';
 import BlogPage from './pages/BlogOne';
 import Profile from './pages/Profile';
 import Photography from './pages/Photography';
-// import GoogleMaps from './components/GoogleMaps';
 import Algorithms from './pages/Algorithms';
 
 function App() {
+  // State for controlling robot transformations
+  const [rotation, setRotation] = useState(0);
+  const [scale, setScale] = useState(1);
+
   return (
     <Router>
       <div className="min-h-screen bg-gray-100">
         <Navigation />
         <Routes>
           {/* Blog Page */}
-          <Route path="/blogs" element={<Blogs/>} />
+          <Route path="/blogs" element={<Blogs />} />
           {/* Work Page */}
           <Route path="/work" element={<Work />} />
-          <Route path="/photography" element={<Photography/>}/>
-          
+          <Route path="/photography" element={<Photography />} />
           <Route path="/blogs/:id" element={<BlogPage />} />
-          <Route path="/profile" element={<Profile/>}/>
-          <Route path="/algorithms" element={<Algorithms/>}/>
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/algorithms" element={<Algorithms />} />
+          
           {/* Home Page */}
           <Route
             path="/"
@@ -53,28 +56,42 @@ function App() {
                   <div className="bg-gray-200 p-4 rounded-lg flex gap-4">
                     {/* Main Content Area */}
                     <div className="flex-grow flex items-center justify-center">
-                      <RobotThreeJS />
+                      <RobotThreeJS rotation={rotation} scale={scale} />
                     </div>
 
-                    {/* Side Box */}
+                    {/* Side Box - Sliders */}
                     <div className="flex flex-col justify-evenly w-1/3 bg-white p-4 rounded-lg shadow-md">
-                      {Array(4)
-                        .fill(null)
-                        .map((_, index) => (
-                          <div key={index} className="w-full mb-4 last:mb-0">
-                            <h3 className="text-lg font-bold mb-2">Sliders</h3>
-                            <p className="text-gray-600 text-sm">
-                              This is the side box content.
-                            </p>
-                          </div>
-                        ))}
+                      <h3 className="text-lg font-bold mb-2">Adjust Robot</h3>
+
+                      {/* Rotation Slider */}
+                      <label className="text-gray-600 text-sm">Arm Rotation</label>
+                      <input
+                        type="range"
+                        min="-1"
+                        max="1"
+                        step="0.01"
+                        value={rotation}
+                        onChange={(e) => setRotation(parseFloat(e.target.value))}
+                        className="w-full"
+                      />
+
+                      {/* Scale Slider */}
+                      <label className="text-gray-600 text-sm">Scale</label>
+                      <input
+                        type="range"
+                        min="0.5"
+                        max="2"
+                        step="0.01"
+                        value={scale}
+                        onChange={(e) => setScale(parseFloat(e.target.value))}
+                        className="w-full"
+                      />
                     </div>
                   </div>
                 </div>
 
                 {/* Bottom Section - Chat */}
                 <ChatInterface />
-                {/* <GoogleMaps /> */}
               </div>
             }
           />
