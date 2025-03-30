@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import Node from '../components/Node';
 import { dijkstra, getNodesInShortestPathOrder } from '../components/dijkstra';
 

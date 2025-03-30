@@ -25,7 +25,7 @@ const processContent = (content: string) => {
 export const blogs: Blog[] = [
     {
         id: 'one',
-        hero: 'Vlog Number One',
+        hero: 'Blog Number One',
         blogfeed: 'My First Blog',
         image: '/images/first.png', // Replace with your image URL
         author: '/images/profilepic.png',
@@ -57,10 +57,13 @@ export const blogs: Blog[] = [
         In tech, be aware that hardware can lock you into specific systems, and in the world’s eyes, once you're successful, you're seen as a genius. \n
         Always apply common sense, and remember that everything has a reason—it is what it is because it's logical. \n
         Insurance is not a field for learning or innovation, and if you value growth, it may not be the best industry to work in. \n
-        Lastly, Maya is useful for working with nodes through its API.
+        Lastly, Maya is useful for working with nodes through its API. \n
+        Being able to be a team player is super important. That's not taught in school too often \n
+        A lot of people see road blocks and stop moving. \n
+
         `,
         date: 'March 19, 2025',
-        readtime: '5 min read',
+        readtime: '10 min read',
     },
     {
         id:'three',
