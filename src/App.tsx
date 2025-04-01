@@ -12,93 +12,103 @@ import Photography from './pages/Photography';
 import Algorithms from './pages/Algorithms';
 
 function App() {
-  // State for controlling robot transformations
-  const [rotation, setRotation] = useState(0);
-  const [scale, setScale] = useState(1);
-
-  return (
-    <Router>
-      <div className="min-h-screen bg-gray-100">
-        <Navigation />
-        <Routes>
-          {/* Blog Page */}
-          <Route path="/blogs" element={<Blogs />} />
-          {/* Work Page */}
-          <Route path="/work" element={<Work />} />
-          <Route path="/photography" element={<Photography />} />
-          <Route path="/blogs/:id" element={<BlogPage />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/algorithms" element={<Algorithms />} />
-          
-          {/* Home Page */}
-          <Route
-            path="/"
-            element={
-              <div className="container mx-auto px-4">
-                {/* Top Section - Two squares */}
-                <div className="grid grid-cols-2 gap-4 mb-4">
-                  {/* Left Square - Keep Calm */}
-                  <div className="bg-[#00ffa2] p-4 rounded-lg flex items-center justify-center h-80 overflow-hidden">
-                    <img src="/images/keepcalm.png" className="w-full h-full object-cover" />
-                  </div>
-
-                  {/* Right Square - GORDON */}
-                  <div className="relative bg-[#E0E0DE] p-4 rounded-lg h-80 overflow-hidden">
-                    <ContentSection />
-                    <h2 className="absolute right-0 bottom-40 -translate-y-24 -rotate-90 origin-bottom-right text-[#67645F] text-6xl">
-                      GORDON
-                    </h2>
-                  </div>
-                </div>
-
-                {/* Middle Section - Content */}
-                <div className="mb-4">
-                  <div className="bg-gray-200 p-4 rounded-lg flex gap-4">
-                    {/* Main Content Area */}
-                    <div className="flex-grow flex items-center justify-center">
-                      <RobotThreeJS rotation={rotation} scale={scale} />
+    const [rotation, setRotation] = useState(0);
+    const [scale, setScale] = useState(1);
+  
+    return (
+      <Router>
+        {/* Video Background */}
+        <div className="relative min-h-screen bg-gray-100 overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          >
+            <source src="/images/video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+  
+          {/* Content with relative z-index to be above video */}
+          <div className="relative z-10">
+            <Navigation />
+            <Routes>
+              {/* Define your routes here */}
+              <Route path="/blogs" element={<Blogs />} />
+              <Route path="/work" element={<Work />} />
+              <Route path="/photography" element={<Photography />} />
+              <Route path="/blogs/:id" element={<BlogPage />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/algorithms" element={<Algorithms />} />
+  
+              {/* Home Page */}
+              <Route
+                path="/"
+                element={
+                  <div className="container mx-auto px-4">
+                    {/* Top Section */}
+                    <div className="grid grid-cols-2 gap-4 mb-4">
+                      <div className="bg-[#00ffa2] p-4 rounded-lg flex items-center justify-center h-80 overflow-hidden">
+                        <img src="/images/keepcalm.png" className="w-full h-full object-cover" />
+                      </div>
+  
+                      <div className="relative bg-[#E0E0DE] p-4 rounded-lg h-80 overflow-hidden">
+                        <ContentSection />
+                        <h2 className="absolute right-0 bottom-40 -translate-y-24 -rotate-90 origin-bottom-right text-[#67645F] text-6xl">
+                          GORDON
+                        </h2>
+                      </div>
                     </div>
-
-                    {/* Side Box - Sliders */}
-                    <div className="flex flex-col justify-evenly w-1/3 bg-white p-4 rounded-lg shadow-md">
-                      <h3 className="text-lg font-bold mb-2">Adjust Robot</h3>
-
-                      {/* Rotation Slider */}
-                      <label className="text-gray-600 text-sm">Arm Rotation</label>
-                      <input
-                        type="range"
-                        min="-1"
-                        max="1"
-                        step="0.01"
-                        value={rotation}
-                        onChange={(e) => setRotation(parseFloat(e.target.value))}
-                        className="w-full"
-                      />
-
-                      {/* Scale Slider */}
-                      <label className="text-gray-600 text-sm">Scale</label>
-                      <input
-                        type="range"
-                        min="0.5"
-                        max="2"
-                        step="0.01"
-                        value={scale}
-                        onChange={(e) => setScale(parseFloat(e.target.value))}
-                        className="w-full"
-                      />
+  
+                    {/* Middle Section */}
+                    <div className="mb-4">
+                      <div className="bg-gray-200 p-4 rounded-lg flex gap-4">
+                        <div className="flex-grow flex items-center justify-center">
+                          <RobotThreeJS rotation={rotation} scale={scale} />
+                        </div>
+  
+                        <div className="flex flex-col justify-evenly w-1/3 bg-white p-4 rounded-lg shadow-md">
+                          <h3 className="text-lg font-bold mb-2">Adjust Robot</h3>
+  
+                          {/* Rotation Slider */}
+                          <label className="text-gray-600 text-sm">Arm Rotation</label>
+                          <input
+                            type="range"
+                            min="-1"
+                            max="1"
+                            step="0.01"
+                            value={rotation}
+                            onChange={(e) => setRotation(parseFloat(e.target.value))}
+                            className="w-full"
+                          />
+  
+                          {/* Scale Slider */}
+                          <label className="text-gray-600 text-sm">Scale</label>
+                          <input
+                            type="range"
+                            min="0.5"
+                            max="2"
+                            step="0.01"
+                            value={scale}
+                            onChange={(e) => setScale(parseFloat(e.target.value))}
+                            className="w-full"
+                          />
+                        </div>
+                      </div>
                     </div>
+  
+                    {/* Bottom Section */}
+                    <ChatInterface />
                   </div>
-                </div>
-
-                {/* Bottom Section - Chat */}
-                <ChatInterface />
-              </div>
-            }
-          />
-        </Routes>
-      </div>
-    </Router>
-  );
-}
+                }
+              />
+            </Routes>
+          </div>
+        </div>
+      </Router>
+    );
+  }
+  
 
 export default App;
