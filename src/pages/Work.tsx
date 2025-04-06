@@ -14,7 +14,7 @@ const projects: Project[] = [
   {
     id: 1,
     name: 'Crime Face',
-    description: 'A clean, minimalist personal portfolio showcasing my skills and experience.',
+    description: 'A crime detection repository to search for your crimes.',
     image: '/images/facecrime.png',
     url: 'https://facecrime.io',
     type: 'project'
@@ -22,7 +22,7 @@ const projects: Project[] = [
   {
     id: 2,
     name: 'Distributed Systems',
-    description: 'A fully functional e-commerce website with a user-friendly shopping experience.',
+    description: 'A portfolio of all my distributed system learnings.',
     image: '/images/distributed.png',
     url: 'https://github.com/DrNogNog/Operating-Systems-Distributed-Systems',
     type: 'project'
