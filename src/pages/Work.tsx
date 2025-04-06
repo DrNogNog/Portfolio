@@ -16,7 +16,7 @@ const projects: Project[] = [
     name: 'Crime Face',
     description: 'A clean, minimalist personal portfolio showcasing my skills and experience.',
     image: '/images/facecrime.png',
-    url: 'facecrime.io',
+    url: 'https://facecrime.io',
     type: 'project'
   },
   {
