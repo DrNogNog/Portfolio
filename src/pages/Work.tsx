@@ -21,6 +21,14 @@ const projects: Project[] = [
   },
   {
     id: 2,
+    name: 'EZML',
+    description: 'Machine Learning Software',
+    image: '/images/yolov8.png',
+    url: 'https://ezml.io/',
+    type: 'project'
+  },
+  {
+    id: 3,
     name: 'Distributed Systems',
     description: 'A portfolio of all my distributed system learnings.',
     image: '/images/distributed.png',
@@ -28,7 +36,7 @@ const projects: Project[] = [
     type: 'project'
   },
   {
-    id: 3,
+    id: 4,
     name: 'Covid-19 News Analysis',
     description: 'Analyzed the news for sentiment and covid-19 similarities with granger causaulity statistics.',
     image: '/images/covid.png',
@@ -36,7 +44,7 @@ const projects: Project[] = [
     type: 'project'
   },
   {
-    id: 4,
+    id: 5,
     name: 'Natural Language Processing & Gates',
     description: 'Natural Language Processing.',
     image: '/images/nlp.png',
@@ -44,7 +52,7 @@ const projects: Project[] = [
     type: 'project'
   },
   {
-    id: 5,
+    id: 6,
     name: 'Android Application',
     description: 'Connecting food and people.',
     image:'/images/android.png',
@@ -52,19 +60,11 @@ const projects: Project[] = [
     type: 'project'
   },
   {
-    id: 6,
+    id: 7,
     name: 'Belfe',
     description: 'Virtual Reality Cosemetic Mirror',
     image: '/images/cosemetic.png',
     url: 'https://github.com/DrNogNog/Belfe',
-    type: 'project'
-  },
-  {
-    id: 7,
-    name: 'EZML',
-    description: 'Machine Learning Software',
-    image: '/images/yolov8.png',
-    url: 'https://ezml.io/',
     type: 'project'
   },
   {
