@@ -14,7 +14,7 @@ const projects: Project[] = [
   {
     id: 1,
     name: 'Crime Face',
-    description: 'A crime detection repository to search for your crimes.',
+    description: 'A backend API designed to identify criminals by comparing uploaded images against a database of mugshots. Leveraging FastAPI, Jina AI CLIP, and a pgvector-powered Postgres database, we created a system that calculates image embeddings, performs similarity searches, and returns relevant metadata like offense and physical characteristics.',
     image: '/images/facecrime.png',
     url: 'https://facecrime.io',
     type: 'project'
