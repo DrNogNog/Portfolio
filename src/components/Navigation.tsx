@@ -5,9 +5,9 @@ const Navigation = () => {
   const location = useLocation();
 
   return (
-    <nav className="bg-white py-4 mb-4">
+    <nav className="bg-black p-4">
       <div className="container mx-auto px-4">
-        <ul className="flex justify-end space-x-4 text-lg font-medium">
+        <ul className="flex justify-end space-x-4 text-lg font-medium text-white">
         <li>
             <Link to="/" className="cursor-pointer hover:text-gray-600">Home</Link>
           </li>

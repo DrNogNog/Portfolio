@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navigation from './components/Navigation';
-import ContentSection from './components/ContentSection';
+
 import ChatInterface from './components/ChatInterface';
 import Work from './pages/Work';
-import RobotThreeJS from './components/TheeJSComponent';
+
 import Blogs from './pages/Blogs';
 import BlogPage from './pages/BlogOne';
 import Profile from './pages/Profile';
@@ -20,32 +20,15 @@ function App() {
 }
 
 function AppContent() {
-  const location = useLocation();
-  const isHome = location.pathname === "/";
-
-  const [rotation, setRotation] = useState(0);
-  const [scale, setScale] = useState(1);
-
   return (
     <div className="relative min-h-screen bg-gray-100 overflow-hidden">
-      {/* Only show video on home page */}
-      {isHome && (
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        >
-          <source src="/images/video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      )}
+
+      
 
       <div className="relative z-10">
         <Navigation />
         <Routes>
-          <Route path="/" element={<HomePage rotation={rotation} setRotation={setRotation} scale={scale} setScale={setScale} />} />
+          <Route path="/" element={<HomePage/>} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/work" element={<Work />} />
           <Route path="/photography" element={<Photography />} />
@@ -58,69 +41,43 @@ function AppContent() {
   );
 }
 
-function HomePage({ 
-  rotation, 
-  setRotation, 
-  scale, 
-  setScale 
-}: { 
-  rotation: number; 
-  setRotation: React.Dispatch<React.SetStateAction<number>>; 
-  scale: number; 
-  setScale: React.Dispatch<React.SetStateAction<number>>; 
-}) {
+function HomePage() {
   return (
-    <div className="container mx-auto px-4">
-      {/* Top Section */}
-      <div className="grid grid-cols-2 gap-4 mb-4">
-        <div className="bg-[#00ffa2] p-4 rounded-lg flex items-center justify-center h-80 overflow-hidden">
-          <img src="/images/keepcalm.png" className="w-full h-full object-cover" />
-        </div>
+    <div>
+    <div className="w-full">
+  {/* Hero Section */}
+  <section className="relative w-full h-screen m-0 p-0">
+    <img
+      src="/images/bostonu.png"
+      alt="Boston University"
+      className="object-cover w-full h-full"
+    />
+    <div className="absolute inset-0 bg-black/30 flex flex-col justify-center items-center text-center">
+      <h1 className="text-5xl font-bold text-white">Computer Science &</h1>
+      <h1 className="text-5xl font-bold text-white">Developer</h1>
+      <h2 className="mt-4 text-3xl text-red-600 font-serif italic">Gordon Ng'</h2>
+      <button className="mt-6 px-4 py-2 bg-white text-black rounded">@bostonu</button>
+    </div>
+  </section>
 
-        <div className="relative bg-[#E0E0DE] p-4 rounded-lg h-80 overflow-hidden">
-          <ContentSection />
-          <h2 className="absolute right-0 bottom-40 -translate-y-24 -rotate-90 origin-bottom-right text-[#67645F] text-6xl">
-            GORDON
-          </h2>
-        </div>
-      </div>
+  {/* Horizontal Bar Divider */}
+  <div className="w-full h-4 bg-gray-800"></div>
+  {/* You can change h-4 for thickness and bg-gray-800 for color */}
 
-      {/* Middle Section */}
-      <div className="mb-4">
-        <div className="bg-gray-200 p-4 rounded-lg flex gap-4">
-          <div className="flex-grow flex items-center justify-center">
-            <RobotThreeJS rotation={rotation} scale={scale} />
-          </div>
-
-          <div className="flex flex-col justify-evenly w-1/3 bg-white p-4 rounded-lg shadow-md">
-            <h3 className="text-lg font-bold mb-2">Adjust Robot</h3>
-
-            {/* Rotation Slider */}
-            <label className="text-gray-600 text-sm">Arm Rotation</label>
-            <input
-              type="range"
-              min="-1"
-              max="1"
-              step="0.01"
-              value={rotation}
-              onChange={(e) => setRotation(parseFloat(e.target.value))}
-              className="w-full"
-            />
-
-            {/* Scale Slider */}
-            <label className="text-gray-600 text-sm">Scale</label>
-            <input
-              type="range"
-              min="0.5"
-              max="2"
-              step="0.01"
-              value={scale}
-              onChange={(e) => setScale(parseFloat(e.target.value))}
-              className="w-full"
-            />
-          </div>
-        </div>
-      </div>
+  {/* Map Section */}
+  <section className="w-full">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.373486654431!2d-71.10761472357788!3d42.35050097119232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3799dd750c8c5%3A0x92f97dbb3b1b6e0!2sBoston%20University!5e0!3m2!1sen!2sus!4v1695680000000!5m2!1sen!2sus"
+      width="100%"
+      height="400"
+      style={{ border: 0 }}
+      allowFullScreen={true}
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </section>
+</div>
+<div className="w-full h-4 bg-gray-800"></div>
 
       {/* Bottom Section */}
       <ChatInterface />
