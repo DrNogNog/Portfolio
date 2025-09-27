@@ -98,3 +98,55 @@
     outline-width: 0.5px;
   }
 }
+
+.algorithm-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.visualize-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  transition: background-color 0.2s;
+}
+
+.visualize-btn:hover {
+  background-color: #ddd;
+}
+
+.grid-dijkstra {
+  display: inline-block; /* tight border */
+  border: 2px solid black;
+}
+
+.grid-row {
+  display: flex;
+}
+
+.node {
+  width: 20px;
+  height: 20px;
+  margin: 0; /* no gaps */
+  box-sizing: border-box;
+  border: 1px solid #ccc; /* optional internal lines */
+}
+
+.node-visited {
+  background-color: lightblue;
+}
+
+.node-shortest-path {
+  background-color: yellow !important;
+}
+
+.mouse-pressed-message {
+  margin-bottom: 10px;
+  color: red;
+}

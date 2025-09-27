@@ -5,7 +5,7 @@ const Navigation = () => {
   const location = useLocation();
 
   return (
-    <nav className="bg-black p-4">
+    <nav className="sticky top-0 z-50 bg-black shadow-md p-4">
       <div className="container mx-auto px-4">
         <ul className="flex justify-end space-x-4 text-lg font-medium text-white">
         <li>

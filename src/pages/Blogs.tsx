@@ -59,7 +59,6 @@ export const blogs: Blog[] = [
         Consistency is good but don't train if it will lead to self-hatred. \n 
         In tech, be aware that hardware can lock you into specific systems, and in the world’s eyes, once you're successful, you're seen as a genius. \n
         Always apply common sense, and remember that everything has a reason—it is what it is because it's logical. \n
-        Insurance is not a field for learning or innovation, and if you value growth, it may not be the best industry to work in. \n
         Lastly, Maya is useful for working with nodes through its API. \n
         Being able to be a team player is super important. That's not taught in school too often \n
         A lot of people see road blocks and stop moving. \n
@@ -82,52 +81,140 @@ export const blogs: Blog[] = [
         date: '',
         readtime: '',
     },
+    {
+    id: 'placeholder',
+    hero: 'Blog Title Here',
+    blogfeed: 'A brief description of the blog goes here.',
+    image: '/images/placeholder.png', // Placeholder image
+    author: '/images/author-placeholder.png', // Placeholder author image
+    authorname: 'Author Name',
+    categories: 'Category1, Category2',
+    quicklinks: 'Link1, Link2',
+    type: 'opinion',
+    content: 'Full content of the blog goes here.',
+    date: 'YYYY-MM-DD',
+    readtime: 'X min read',
+    },
+    {
+    id: 'placeholder',
+    hero: 'Blog Title Here',
+    blogfeed: 'A brief description of the blog goes here.',
+    image: '/images/placeholder.png', // Placeholder image
+    author: '/images/author-placeholder.png', // Placeholder author image
+    authorname: 'Author Name',
+    categories: 'Category1, Category2',
+    quicklinks: 'Link1, Link2',
+    type: 'opinion',
+    content: 'Full content of the blog goes here.',
+    date: 'YYYY-MM-DD',
+    readtime: 'X min read',
+    },
+    {
+    id: 'placeholder',
+    hero: 'Blog Title Here',
+    blogfeed: 'A brief description of the blog goes here.',
+    image: '/images/placeholder.png', // Placeholder image
+    author: '/images/author-placeholder.png', // Placeholder author image
+    authorname: 'Author Name',
+    categories: 'Category1, Category2',
+    quicklinks: 'Link1, Link2',
+    type: 'opinion',
+    content: 'Full content of the blog goes here.',
+    date: 'YYYY-MM-DD',
+    readtime: 'X min read',
+    },
+    {
+    id: 'placeholder',
+    hero: 'Blog Title Here',
+    blogfeed: 'A brief description of the blog goes here.',
+    image: '/images/placeholder.png', // Placeholder image
+    author: '/images/author-placeholder.png', // Placeholder author image
+    authorname: 'Author Name',
+    categories: 'Category1, Category2',
+    quicklinks: 'Link1, Link2',
+    type: 'opinion',
+    content: 'Full content of the blog goes here.',
+    date: 'YYYY-MM-DD',
+    readtime: 'X min read',
+    },
+    {
+    id: 'placeholder',
+    hero: 'Blog Title Here',
+    blogfeed: 'A brief description of the blog goes here.',
+    image: '/images/placeholder.png', // Placeholder image
+    author: '/images/author-placeholder.png', // Placeholder author image
+    authorname: 'Author Name',
+    categories: 'Category1, Category2',
+    quicklinks: 'Link1, Link2',
+    type: 'opinion',
+    content: 'Full content of the blog goes here.',
+    date: 'YYYY-MM-DD',
+    readtime: 'X min read',
+    },
+    {
+    id: 'placeholder',
+    hero: 'Blog Title Here',
+    blogfeed: 'A brief description of the blog goes here.',
+    image: '/images/placeholder.png', // Placeholder image
+    author: '/images/author-placeholder.png', // Placeholder author image
+    authorname: 'Author Name',
+    categories: 'Category1, Category2',
+    quicklinks: 'Link1, Link2',
+    type: 'opinion',
+    content: 'Full content of the blog goes here.',
+    date: 'YYYY-MM-DD',
+    readtime: 'X min read',
+    },
+
+
 ];
 
 const Blogs = () => {
     useEffect(() => {
-        // Create a script element
         const script = document.createElement('script');
-        script.src = './scripttwo.js'; // Replace with the actual path to your script
+        script.src = './scripttwo.js';
         script.async = true;
-
-        // Append the script to the document body
         document.body.appendChild(script);
 
-        // Cleanup function to remove the script when the component unmounts
         return () => {
             document.body.removeChild(script);
         };
     }, []);
 
     return (
-        <div className="min-h-screen bg-[#e5b3e5] p-4">
+        <div className="min-h-screen bg-gray-100 p-4">
             <div className="container mx-auto">
+                <h2 className="text-2xl font-bold mb-4">Latest</h2>
                 <div className="grid grid-cols-3 gap-4">
                     {blogs.map((blog, index) => (
                         <div key={index} className="relative group bg-white rounded-lg overflow-hidden shadow-lg cursor-pointer transition-transform hover:scale-105">
-                            <Link to={`/blogs/${blog.id}`}> 
-                            {/* Image */}
-                            <img
-                                src={blog.image}
-                                alt={blog.blogfeed}
-                                className="w-full h-48 object-cover"
-                            />
-
-                            {/* Content */}
-                            <div className="p-4">
-                                <h3 className="text-lg font-semibold mb-2">{blog.hero}</h3>
-                                <p className="text-sm text-gray-600" style={{ whiteSpace: 'pre-wrap' }}>
-                                    {processContent(blog.blogfeed)} {/* Processed content */}
-                                </p>
-                            </div>
-
-                            {/* Hover Icons */}
+                            <Link to={`/blogs/${blog.id}`}>
+                                <img
+                                    src={blog.image}
+                                    alt={blog.hero}
+                                    className="w-full h-48 object-cover"
+                                />
+                                <div className="p-4">
+                                    <h3 className="text-lg font-semibold mb-2">{blog.hero}</h3>
+                                    <p className="text-sm text-gray-600" style={{ whiteSpace: 'pre-wrap' }}>
+                                        {processContent(blog.blogfeed)}
+                                    </p>
+                                    <div className="flex items-center mt-2 text-sm text-gray-500">
+                                        <img
+                                            src={blog.author}
+                                            alt={blog.authorname}
+                                            className="w-6 h-6 rounded-full mr-2"
+                                        />
+                                        <span>{blog.authorname}</span>
+                                        <span className="ml-2">{blog.date}</span>
+                                        <span className="ml-2">{blog.readtime}</span>
+                                    </div>
+                                </div>
+                            </Link>
                             <div className="absolute right-2 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex space-x-2">
                                 <Download className="text-white w-6 h-6" />
                                 <ArrowRight className="text-white w-6 h-6" />
                             </div>
-                            </Link>
                         </div>
                     ))}
                 </div>

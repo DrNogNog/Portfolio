@@ -1,5 +1,4 @@
-import { ArrowRight, Download } from 'lucide-react'; // Use FileDownload instead of Download
-
+import { ArrowRight, Download } from 'lucide-react'; // Updated to use Download as per lucide-react; if FileDownload is custom, import accordingly
 
 interface Project {
   id: number;
@@ -125,46 +124,100 @@ const projects: Project[] = [
   }
 ];
 
-
-
-
 const Work = () => {
+  const projectItems = projects.filter(p => p.type === 'project');
+  const photographyItem = projects.find(p => p.type === 'photography');
+  const resumeItem = projects.find(p => p.type === 'resume');
+
   return (
-    <div className="min-h-screen bg-[#e5b3e5] p-4">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-4 gap-4">
-          {projects.map((project) => (
+    <div className="min-h-screen bg-gradient-to-br from-purple-100 to-pink-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-7xl">
+        <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">My Work</h1>
+        
+        {/* Projects Section */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-semibold text-gray-700 mb-8">Projects</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {projectItems.map((project) => (
+              <a
+                key={project.id}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="relative">
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300" />
+                </div>
+                <div className="p-5">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">{project.name}</h3>
+                  <p className="text-sm text-gray-600 line-clamp-3">{project.description}</p>
+                </div>
+                <div className="absolute right-4 bottom-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <ArrowRight className="text-purple-600 w-6 h-6" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {/* Photography and Resume Section */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {photographyItem && (
             <a
-              key={project.id}
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative bg-white rounded-lg overflow-hidden shadow-lg cursor-pointer transition-transform hover:scale-105"
+              href={photographyItem.url}
+              className="group relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <img
-                src={project.image}
-                alt={project.name}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold mb-2">{project.name}</h3>
-                <p className="text-sm text-gray-600">{project.description}</p>
+              <div className="relative">
+                <img
+                  src={photographyItem.image}
+                  alt={photographyItem.name}
+                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300" />
               </div>
-              <div className="absolute right-2 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                {project.type === "resume" ? (
-                  <Download className="text-white w-6 h-6" />
-                ) : (
-                  <ArrowRight className="text-white w-6 h-6" />
-                )}
+              <div className="p-5">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">{photographyItem.name}</h3>
+                <p className="text-sm text-gray-600">{photographyItem.description}</p>
+              </div>
+              <div className="absolute right-4 bottom-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <ArrowRight className="text-purple-600 w-6 h-6" />
               </div>
             </a>
-          ))}
-        </div>
+          )}
+          {resumeItem && (
+            <a
+              href={resumeItem.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="relative">
+                <img
+                  src={resumeItem.image}
+                  alt={resumeItem.name}
+                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300" />
+              </div>
+              <div className="p-5">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">{resumeItem.name}</h3>
+                <p className="text-sm text-gray-600">{resumeItem.description}</p>
+              </div>
+              <div className="absolute right-4 bottom-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <Download className="text-purple-600 w-6 h-6" />
+              </div>
+            </a>
+          )}
+        </section>
       </div>
     </div>
   );
 };
 
 export default Work;
-

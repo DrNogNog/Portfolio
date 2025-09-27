@@ -21,10 +21,7 @@ function App() {
 
 function AppContent() {
   return (
-    <div className="relative min-h-screen bg-gray-100 overflow-hidden">
-
-      
-
+    <div className="relative min-h-screen bg-gray-100">
       <div className="relative z-10">
         <Navigation />
         <Routes>
